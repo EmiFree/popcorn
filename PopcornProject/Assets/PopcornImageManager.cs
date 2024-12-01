@@ -9,26 +9,13 @@ public class PopcornImageManager : MonoBehaviour
 
     List<Image> ImageComponets = new List<Image>();
 
-
     public int numberOfImages = 12;
 
-    
-
-
-    public float timebetweenSwap = 2f;
+    public float timeBetweenSwap = 2f;
     public float timerDelta = 0;
     public float timerStart = 0;
     private float timeCumulitive = 0;
     GridLayoutGroup grid;
-
-
-
-
-
-
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -37,34 +24,20 @@ public class PopcornImageManager : MonoBehaviour
         timerStart = 0;
         timeCumulitive = 0;
 
-        this.transform.parent.gameObject.AddComponent<GridLayoutGroup>();
-        grid = this.GetComponentInParent<GridLayoutGroup>();
+        gameObject.AddComponent<GridLayoutGroup>();
+        grid = GetComponent<GridLayoutGroup>();
         grid.spacing = new Vector2(100, 100);
 
-        for(int t =0; t<numberOfImages; t++)
+        for (int t = 0; t < numberOfImages; t++)
         {
             int randomNum = Random.Range(0, SpriteList.Count);
             GameObject tempImage = new GameObject();
-            ImageComponets.Add( tempImage.AddComponent<Image>());
+            ImageComponets.Add(tempImage.AddComponent<Image>());
 
-            ImageComponets[t].sprite =  SpriteList[randomNum];
+            ImageComponets[t].sprite = SpriteList[randomNum];
 
             ImageComponets[t].transform.SetParent(grid.gameObject.transform);
-
-
-
-
-
         }
-
-
-
-
-      
-
-
-
-
 
     }
 
@@ -73,33 +46,15 @@ public class PopcornImageManager : MonoBehaviour
     {
         timeCumulitive += Time.deltaTime;
 
-        
-
-        
-
-        
-
-        if(timeCumulitive - timerStart >= timebetweenSwap)
+        if (timeCumulitive - timerStart >= timeBetweenSwap)
         {
-            print("hi");
             foreach (Image i in ImageComponets)
             {
-                
+
                 i.transform.Rotate(0, 0, 90);
                 i.enabled = true;
             }
             timerStart = timeCumulitive;
-
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
