@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ThirdPersonMovementScript : MonoBehaviour
@@ -37,15 +34,6 @@ public class ThirdPersonMovementScript : MonoBehaviour
             _knockVector = 0.75f * _knockVector;
             if (_knockVector.magnitude < 0.1) _knocked = false;
             return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speed = 8f;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed = 4f;
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
