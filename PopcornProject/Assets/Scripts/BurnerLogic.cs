@@ -17,8 +17,8 @@ public class BurnerLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
 
+        burnerAnimator.speed = 0f;
 
     }
 
@@ -27,15 +27,16 @@ public class BurnerLogic : MonoBehaviour
     {
         if (heatLevel.Equals("LOW")) 
         {
-
+            burnerAnimator.Play("Burner_Large", 0, 0f);
         }
         else if (heatLevel.Equals("MEDIUM")) 
         {
+            burnerAnimator.Play("Burner_Large", 0, .5f);
 
         }
         else
         {
-
+            burnerAnimator.Play("Burner_Large", 0, 1f);
         }
 
 
