@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHeatLogic : MonoBehaviour
 {
@@ -37,7 +38,11 @@ public class PlayerHeatLogic : MonoBehaviour
         {
             // +0.2 heat / 10ms -> 100 heat in 5 seconds
             _heatLevel += 0.2f;
-            //if (_heatLevel >= 100.0f) EndGame();
+            if (_heatLevel >= 100.0f)
+            {
+                Pop();
+                break;
+            }
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -64,6 +69,18 @@ public class PlayerHeatLogic : MonoBehaviour
 
 
     }
-
-
+    private void Pop()
+    {
+        // remove player movement
+        gameObject.GetComponent<ThirdPersonMovementScript>().enabled = false;
+        gameObject.GetComponent<CharacterController>().enabled = false;
+        // add ragdoll effect
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<Rigidbody>().AddForce(500.0f * Vector3.up + 100.0f * Vector3.forward);
+        // load death screen
+        SceneManager.LoadSceneAsync("DeathScreen", LoadSceneMode.Additive);
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 }
+
+
