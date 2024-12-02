@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
 
 public class HeatBarLogic : MonoBehaviour
 {
     [SerializeField]
-    public int temprature;
+    public float temprature;
+
+    [SerializeField]
+    GameObject player;
+
+    PlayerHeatLogic phl;
+
 
     Image barImage;
 
@@ -17,6 +25,18 @@ public class HeatBarLogic : MonoBehaviour
     {
         barImage = this.GetComponentInParent<Image>();
 
+        try
+        {
+            phl = player.GetComponent<PlayerHeatLogic>();
+
+            temprature = phl.getHeat();
+
+        }
+        catch (Exception e)
+        {
+
+        }
+
 
 
     }
@@ -24,6 +44,18 @@ public class HeatBarLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        try
+        {
+            temprature = phl.getHeat();
+
+
+        }
+        catch (Exception e)
+        {
+
+        }
+
+
         float fillRatio = temprature/100f ;
 
 
