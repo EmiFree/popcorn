@@ -64,16 +64,10 @@ public class PlayerHeatLogic : MonoBehaviour
         }
         _heatLevel = 0.0f;  // reset heat level
     }
-    public float getHeat()
-    {
-        return _heatLevel;
-    }
-    public void setHeat(float h)
-    {
-        _heatLevel = h;
 
+    public float GetHeat() { return _heatLevel; }
+    public void setHeat(float h) { _heatLevel = h; }
 
-    }
     private void Pop()
     {
         // change model

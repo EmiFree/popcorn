@@ -26,7 +26,7 @@ public class TempProbeText : MonoBehaviour
         {
             phl = player.GetComponent<PlayerHeatLogic>();
 
-            temprature = phl.getHeat();
+            temprature = phl.GetHeat();
 
         }
         catch (Exception e)
@@ -44,7 +44,7 @@ public class TempProbeText : MonoBehaviour
     {
         try
         {
-            temprature = phl.getHeat();
+            temprature = phl.GetHeat();
 
 
         }

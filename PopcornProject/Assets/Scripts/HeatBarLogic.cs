@@ -29,7 +29,7 @@ public class HeatBarLogic : MonoBehaviour
         {
             phl = player.GetComponent<PlayerHeatLogic>();
 
-            temprature = phl.getHeat();
+            temprature = phl.GetHeat();
 
         }
         catch (Exception e)
@@ -46,7 +46,7 @@ public class HeatBarLogic : MonoBehaviour
     {
         try
         {
-            temprature = phl.getHeat();
+            temprature = phl.GetHeat();
 
 
         }
