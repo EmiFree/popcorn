@@ -14,7 +14,8 @@ public class HeatSource : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHeatLogic>().AddHeat();
+            PlayerHeatLogic component = other.gameObject.GetComponent<PlayerHeatLogic>();
+            if (component != null) component.AddHeat();
         }
     }
 
@@ -22,7 +23,8 @@ public class HeatSource : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHeatLogic>().ReduceHeat();
+            PlayerHeatLogic component = other.gameObject.GetComponent<PlayerHeatLogic>();
+            if (component != null) component.ReduceHeat();
         }
     }
 }
