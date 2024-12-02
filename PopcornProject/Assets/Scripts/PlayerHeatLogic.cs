@@ -46,8 +46,8 @@ public class PlayerHeatLogic : MonoBehaviour
         // increase heat until coroutine is stopped
         while (true)
         {
-            // +0.2 heat / 10ms -> 100 heat in 5 seconds
-            _heatLevel += 0.2f;
+            // +0.3 heat / 10ms -> 100 heat in 3 seconds
+            _heatLevel += 0.33f;
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -76,6 +76,9 @@ public class PlayerHeatLogic : MonoBehaviour
     }
     private void Pop()
     {
+        // change model
+        transform.Find("Popped").gameObject.SetActive(true);
+        transform.Find("Unpopped").gameObject.SetActive(false);
         // remove player movement
         gameObject.GetComponent<ThirdPersonMovementScript>().enabled = false;
         gameObject.GetComponent<CharacterController>().enabled = false;
