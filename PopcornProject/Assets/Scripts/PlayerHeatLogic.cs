@@ -15,6 +15,16 @@ public class PlayerHeatLogic : MonoBehaviour
         _decreaseHeatCoroutine = DecreaseHeat();
     }
 
+    private void Update()
+    {
+        if (_heatLevel >= 100.0f)
+        {
+            StopAllCoroutines();
+            Pop();
+            Destroy(this);
+        }
+    }
+
     // Called once. Player will begin to heat up until heatEnabled flag 
     public void AddHeat()
     {
@@ -38,11 +48,6 @@ public class PlayerHeatLogic : MonoBehaviour
         {
             // +0.2 heat / 10ms -> 100 heat in 5 seconds
             _heatLevel += 0.2f;
-            if (_heatLevel >= 100.0f)
-            {
-                Pop();
-                break;
-            }
             yield return new WaitForSeconds(0.01f);
         }
     }
