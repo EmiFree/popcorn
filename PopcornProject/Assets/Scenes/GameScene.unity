@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 48554095}
   - component: {fileID: 48554096}
   - component: {fileID: 48554097}
+  - component: {fileID: 48554098}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -221,6 +222,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heatLevel: 0
+--- !u!114 &48554098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48554093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec4c0bf6c8a99245a9ec20ce905d166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temprature: 0
+  player: {fileID: 48554093}
+  heatLevel: HIGH
 --- !u!1 &383172933
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,10 +271,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1977691335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -552.27435, y: -466.8}
-  m_SizeDelta: {x: 117.4829, y: 20.5556}
+  m_AnchorMin: {x: 0.1754618, y: 0.19653809}
+  m_AnchorMax: {x: 0.2334618, y: 0.20563453}
+  m_AnchoredPosition: {x: -1.2744141, y: 2.218933}
+  m_SizeDelta: {x: 7.48291, y: 6.5177917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383172935
 MonoBehaviour:
@@ -332,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temprature: 65
+  player: {fileID: 48554093}
 --- !u!1 &502925852
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempText: {fileID: 502925855}
   temprature: 8.8
-  player: {fileID: 0}
+  player: {fileID: 48554093}
 --- !u!114 &502925855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22500001, y: 0.09763493}
   m_AnchorMax: {x: 0.27438536, y: 0.18553971}
-  m_AnchoredPosition: {x: -3.5, y: -0.5}
+  m_AnchoredPosition: {x: -3.500061, y: -0.49987793}
   m_SizeDelta: {x: 7, y: 3.8399963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768333376
@@ -592,8 +609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5fd565944ff1e49928fae6484fbf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatLevel: HIGH
+  heatLevel: 
   handleAnimator: {fileID: 768333378}
+  player: {fileID: 48554093}
 --- !u!1 &802116746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 48.47}
   m_AnchorMin: {x: 0.010159312, y: 0.081}
   m_AnchorMax: {x: 0.13969429, y: 0.2525397}
-  m_AnchoredPosition: {x: 31, y: -20.5}
+  m_AnchoredPosition: {x: 31, y: -20.500061}
   m_SizeDelta: {x: -61.314087, y: -72.20282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1651747862
@@ -1288,8 +1306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2883ffc973da649b249b17deeb18ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatLevel: HIGH
+  heatLevel: 
   burnerAnimator: {fileID: 1808420226}
+  player: {fileID: 48554093}
 --- !u!1 &1977691331
 GameObject:
   m_ObjectHideFlags: 0

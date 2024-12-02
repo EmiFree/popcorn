@@ -18,7 +18,7 @@ public class HeatLevelsLogic : MonoBehaviour
 
     public string heatLevel;
 
-    private float start;
+    private float targetTime = 1f;
     private float currentTime;
 
 
@@ -30,7 +30,7 @@ public class HeatLevelsLogic : MonoBehaviour
 
         heatLevel = "MEDIUM";
         temprature = 0;
-        start = 0;
+        targetTime = 1f;
         currentTime = 0;
         
         
@@ -52,6 +52,7 @@ public class HeatLevelsLogic : MonoBehaviour
     void Update()
     {
 
+        targetTime -= Time.deltaTime;
         float previousHeat = temprature;
 
         try
@@ -74,14 +75,16 @@ public class HeatLevelsLogic : MonoBehaviour
         currentTime += deltaTime;
 
 
-        if(currentTime-start>=1f)
+        if(targetTime <=0.0f)
         {
 
-            if(temprature - previousHeat>8)
+            print(temprature - previousHeat);
+
+            if(temprature - previousHeat>.05)
             {
                 heatLevel = "HIGH";
             }
-            if(temprature - previousHeat <3)
+            else if(temprature - previousHeat <.02)
             {
                 heatLevel = "LOW";
             }
@@ -94,8 +97,9 @@ public class HeatLevelsLogic : MonoBehaviour
 
 
 
-
+            targetTime = 1f;
         }
+        
 
     }
     public string getHeatLevel()
