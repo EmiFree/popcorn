@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -32,17 +31,8 @@ public class SugarCubeLogic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-            StartCoroutine(SpeedUp(other.gameObject));
+            other.gameObject.GetComponent<ThirdPersonMovementScript>().speed += 5.0f;
+            Destroy(gameObject);
         }
-    }
-
-    private IEnumerator SpeedUp(GameObject player)
-    {
-        player.GetComponent<ThirdPersonMovementScript>().speed += 5.0f;
-        yield return new WaitForSeconds(10.0f);
-        player.GetComponent<ThirdPersonMovementScript>().speed -= 5.0f;
-        Destroy(gameObject);
     }
 }
