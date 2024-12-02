@@ -10,6 +10,10 @@ public class BurnerLogic : MonoBehaviour
     [SerializeField]
     Animator burnerAnimator;
 
+    [SerializeField]
+    GameObject player;
+
+    HeatLevelsLogic hll;
 
 
 
@@ -19,12 +23,19 @@ public class BurnerLogic : MonoBehaviour
     {
 
         burnerAnimator.speed = 0f;
+        hll = player.GetComponent<HeatLevelsLogic>();
+
+        heatLevel = hll.getHeatLevel();
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        heatLevel = hll.getHeatLevel();
+
         if (heatLevel.Equals("LOW")) 
         {
             burnerAnimator.Play("Burner_Large", 0, 0f);

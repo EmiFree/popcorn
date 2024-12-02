@@ -11,6 +11,13 @@ public class NewBehaviourScript : MonoBehaviour
     Animator handleAnimator;
 
 
+    [SerializeField]
+    GameObject player;
+
+    HeatLevelsLogic hll;
+
+
+
 
 
 
@@ -19,12 +26,19 @@ public class NewBehaviourScript : MonoBehaviour
     {
 
         handleAnimator.speed = .5f;
+        hll = player.GetComponent<HeatLevelsLogic>();
+
+        heatLevel = hll.getHeatLevel();
+
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        heatLevel = hll.getHeatLevel();
         if (heatLevel.Equals("LOW"))
         {
             handleAnimator.speed = .2f;
