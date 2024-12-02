@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class TempProbeText : MonoBehaviour
 {
@@ -9,36 +10,70 @@ public class TempProbeText : MonoBehaviour
     TMP_Text tempText;
 
     [SerializeField]
-    public int temprature;
+    public float temprature;
+
+    [SerializeField]
+    GameObject player;
+
+    PlayerHeatLogic phl;
 
 
     // Start is called before the first frame update
     void Start()
     {
       temprature = 100;
+        try
+        {
+            phl = player.GetComponent<PlayerHeatLogic>();
+
+            temprature = phl.getHeat();
+
+        }
+        catch (Exception e)
+        {
+
+        }
+
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        try
+        {
+            temprature = phl.getHeat();
+
+
+        }
+        catch (Exception e)
+        {
+
+        }
+
+
+
+
         if(temprature>=100)
         {
-            tempText.SetText("" + temprature);
+            tempText.SetText("" + (int)temprature);
         }
-        else if (temprature<100 && temprature>=10)
+        else if (temprature<100 && (int)temprature>=10)
         {
-            tempText.SetText("0" + temprature);
+            tempText.SetText("0" + (int)temprature);
         }
         else
         {
-            tempText.SetText("00" + temprature);
+            tempText.SetText("00" + (int)temprature);
         }
         
 
 
         
     }
-    void setTemp(int tmep)
+    void setTemp(float tmep)
     {
         temprature = tmep;
     }
