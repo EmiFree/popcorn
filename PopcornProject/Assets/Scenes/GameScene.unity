@@ -698,9 +698,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a5d825e79288e478a4f723e21dfb52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 632382013}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a5d825e79288e478a4f723e21dfb52, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 632382012}
     - targetCorrespondingSourceObject: {fileID: 3586158164380441159, guid: 95a5d825e79288e478a4f723e21dfb52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 33089808}
@@ -811,7 +808,6 @@ GameObject:
   - component: {fileID: 367530074}
   - component: {fileID: 367530073}
   - component: {fileID: 367530072}
-  - component: {fileID: 367530071}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -834,20 +830,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 672707040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &367530071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367530069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7124a5e21939b3449d00c7bfb56afa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0
-  _force: 0
 --- !u!114 &367530072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,9 +842,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f73dec702ae095418b83e9b451cfa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _projectile: {fileID: 0}
-  _rotationSpeed: 0
+  _player: {fileID: 48554094}
+  _projectile: {fileID: 1387203997}
+  _rotationSpeed: 3
   _attackDelay: 0
 --- !u!135 &367530073
 SphereCollider:
@@ -900,12 +882,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 5, y: 5, z: 11}
 --- !u!23 &367530075
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1455,82 +1437,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &626258234
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6049567643564623438, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_Name
-      value: SugarCube (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 72.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675584910202461644, guid: dfe622609c082124bafb470562c17668, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dfe622609c082124bafb470562c17668, type: 3}
 --- !u!1 &632382011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a5d825e79288e478a4f723e21dfb52, type: 3}
   m_PrefabInstance: {fileID: 253457187}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &632382012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632382011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7124a5e21939b3449d00c7bfb56afa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0
-  _force: 0
 --- !u!135 &632382013
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2521,7 +2432,7 @@ Transform:
   m_GameObject: {fileID: 1387203997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.099953, y: -1.0642272, z: -1.5502472}
+  m_LocalPosition: {x: 1.47, y: -0.378, z: -1.744}
   m_LocalScale: {x: 0.17091124, y: 0.17091124, z: 0.17091124}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2539,8 +2450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7124a5e21939b3449d00c7bfb56afa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _force: 0
+  _speed: 3
+  _force: 3
 --- !u!135 &1387204000
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2789,8 +2700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7124a5e21939b3449d00c7bfb56afa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _force: 0
+  _speed: 3
+  _force: 3
 --- !u!135 &1590166729
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2871,7 +2782,7 @@ Transform:
   m_GameObject: {fileID: 1590166727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.099953, y: -1.0642272, z: -1.5502472}
+  m_LocalPosition: {x: 1.43, y: -1.0642272, z: -1.5502472}
   m_LocalScale: {x: 0.17091124, y: 0.17091124, z: 0.17091124}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3217,7 +3128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.02084392, y: 0.036172587}
   m_AnchorMax: {x: 0.23731016, y: 0.09763493}
-  m_AnchoredPosition: {x: -4.199951, y: 3.5}
+  m_AnchoredPosition: {x: -4.1999207, y: 3.5}
   m_SizeDelta: {x: 12.295807, y: 8.762398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1808420226
@@ -3308,7 +3219,6 @@ GameObject:
   - component: {fileID: 1864378028}
   - component: {fileID: 1864378027}
   - component: {fileID: 1864378026}
-  - component: {fileID: 1864378025}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -3316,20 +3226,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1864378025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864378024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7124a5e21939b3449d00c7bfb56afa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0
-  _force: 0
 --- !u!114 &1864378026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,9 +3238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f73dec702ae095418b83e9b451cfa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _projectile: {fileID: 0}
-  _rotationSpeed: 0
+  _player: {fileID: 48554094}
+  _projectile: {fileID: 1590166727}
+  _rotationSpeed: 5
   _attackDelay: 0
 --- !u!135 &1864378027
 SphereCollider:
@@ -3387,7 +3283,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 5, y: 5, z: 11}
 --- !u!23 &1864378029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4378,7 +4274,6 @@ SceneRoots:
   - {fileID: 48554094}
   - {fileID: 1160741519}
   - {fileID: 1473130077}
-  - {fileID: 626258234}
   - {fileID: 794294042}
   - {fileID: 70877768}
   - {fileID: 508616334}
