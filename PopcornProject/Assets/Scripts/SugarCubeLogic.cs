@@ -31,7 +31,7 @@ public class SugarCubeLogic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<ThirdPersonMovementScript>().speed += 5.0f;
+            other.gameObject.GetComponent<ThirdPersonMovementScript>().speed += 8.0f;
             Destroy(gameObject);
         }
     }

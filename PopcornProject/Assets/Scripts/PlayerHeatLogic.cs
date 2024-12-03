@@ -46,8 +46,8 @@ public class PlayerHeatLogic : MonoBehaviour
         // increase heat until coroutine is stopped
         while (true)
         {
-            // +0.3 heat / 10ms -> 100 heat in 3 seconds
-            _heatLevel += 0.33f;
+            // +0.15 heat / 10ms -> 100 heat in 3 seconds
+            _heatLevel += 0.15f;
             yield return new WaitForSeconds(0.01f);
         }
     }
